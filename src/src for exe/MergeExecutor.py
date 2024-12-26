@@ -679,25 +679,28 @@ class MergeExecutor:
     
     def checkInstrumentStructure(self):
         
-        #path = os.path.abspath(__file__)
-        path = sys.executable
+        path = os.path.abspath(__file__)
         path = '\\'.join(path.split('\\')[:-2])
         
-        if not (os.path.isdir(f"{path}files\\modules\\old\\")):
+        if not (os.path.isdir(f"{path}\\files\\modules\\old")):
             self.ok = False
-            self.errMsg = f"Отсутствует директория {path}files\\modules\\old\\"
+            self.errMsg = f"Отсутствует директория {path}\\files\\modules\\old"
+            return self
         
-        if not (os.path.isdir(f"{path}files\\modules\\new\\")):
+        if not (os.path.isdir(f"{path}\\files\\modules\\new")):
             self.ok = False
-            self.errMsg = f"Отсутствует директория {path}files\\modules\\new\\"
+            self.errMsg = f"Отсутствует директория {path}\\files\\modules\\new"
+            return self
         
-        if not (os.path.isdir(f"{path}files\\subtags\\old\\")):
+        if not (os.path.isdir(f"{path}\\files\\subtags\\old")):
             self.ok = False
-            self.errMsg = f"Отсутствует директория {path}files\\subtags\\old\\"
+            self.errMsg = f"Отсутствует директория {path}\\files\\subtags\\old"
+            return self
         
-        if not (os.path.isdir(f"{path}files\\subtags\\new\\")):
+        if not (os.path.isdir(f"{path}\\files\\subtags\\new")):
             self.ok = False
-            self.errMsg = f"Отсутствует директория {path}files\\subtags\\new\\"
+            self.errMsg = f"Отсутствует директория {path}\\files\\subtags\\new"
+            return self
             
         return self
     
@@ -708,6 +711,11 @@ class MergeExecutor:
         MergeSubtag().execute(need_explanation)
     
     def execute(self):
+        
+        self.checkInstrumentStructure()
+        if not (self.ok):
+            print(self.errMsg)
+            return
         
         action = ''
         need_explanation = ''
