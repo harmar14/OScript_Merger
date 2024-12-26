@@ -1,2 +1,25 @@
-# OScript_Merger
-A console application for merging code of OpenText Content Server modules and subtags automatically during platform upgrade.
+# Утилита для мерджа модулей и сабтегов на OScript. #
+
+### Подготовка к запуску ###
+
+Перейдите в папку files.  
+В ней должно быть две папки: modules и subtags.  
+Внутри modules и subtags тоже должно быть две папки: old и new.  
+Модули OTCS21 загрузить в /modules/old.  
+Модули OTCS24 загрузить в /modules/new.  
+Сабтеги OTCS21 загрузить в /subtags/old.  
+Сабтеги OTCS24 загрузить в /subtags/new.  
+
+### Запуск ###
+
+Для запуска перейдите в папку dist и запустите MergeExecutor.exe, далее следуйте инструкциям в консоли.
+
+### Результат ###
+
+В результате выполнения программы в папках modules и subtags (смотря что мерджилось) появляется папка merged.  
+Там в папке \_explanation дополнительные файлы с подробностями о произведенном мердже для всех файлов с кодом, а остальное - сам результат.
+
+### Исходный код ###
+
+Исходный код находится в папке src в файлах Main.py, MergeModule.py, MergeSubtag.py и MergeOScript.py.  
+MergeExecutor.py - это объединение всех перечисленных выше файлов, сделанный для сборки exe-файла.  
