@@ -5,10 +5,10 @@
 Перейдите в папку files.  
 В ней должно быть две папки: modules и subtags.  
 Внутри modules и subtags тоже должно быть две папки: old и new.  
-Модули OTCS21 загрузить в /modules/old.  
-Модули OTCS24 загрузить в /modules/new.  
-Сабтеги OTCS21 загрузить в /subtags/old.  
-Сабтеги OTCS24 загрузить в /subtags/new.  
+Модули более ранней версии OTCS загрузить в /modules/old.  
+Модули более поздней версии OTCS загрузить в /modules/new.  
+Сабтеги более ранней версии OTCS загрузить в /subtags/old.  
+Сабтеги более поздней версии OTCS загрузить в /subtags/new.  
 
 ### Запуск ###
 
